@@ -1,4 +1,4 @@
-# Description
+# Cipher algorithms
 
 A library of 4 simple cipher algorithms:
 
@@ -9,25 +9,23 @@ A library of 4 simple cipher algorithms:
 
 ## Compile
 
-Use the provided Makefile:
-
-### Building the library
+Build the library:
 
 ```bash
 make crypto.o
 ```
 
-### Building the test files
+## Tests
 
 Using the library is demonstrated in [main.c](main.c)
 
-* Build the tests:
+Build:
 
 ```bash
 make crypto
 ```
 
-* Run the tests:
+Run:
 
 ```bash
 ./crypto
