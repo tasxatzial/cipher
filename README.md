@@ -17,7 +17,7 @@ make crypto.o
 
 ## Tests
 
-Using the library is demonstrated in [main.c](main.c)
+Using the library is demonstrated in [main.c](src/main.c)
 
 Build:
 
