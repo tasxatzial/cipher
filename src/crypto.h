@@ -11,7 +11,7 @@ Caesar's, Spartan's, Vigenere's, One-time pad (OTP) */
 /* One-time pad (OTP) cipher
 
 Encrypts the specified plaintext using the specified key. Key should be the same length
-as the plaintext. Allowed characters for the plaintext are (0-9A-Za-z).
+as the plaintext.
 
 Returns null if:
 1) plaintext is NULL
@@ -35,7 +35,8 @@ uint8_t *otp_decrypt(uint8_t *ciphertext, uint8_t *key);
 /* Caesar's cipher
 
 Encrypts the specified plaintext using the specified number N.
-Allowed characters for the plaintext are (0-9A-Za-z).
+Permitted characters for the plaintext are (0-9A-Za-z). This is a requirement
+(not enforced) for the function to work properly.
 
 Returns NULL if plaintext is NULL */
 uint8_t *caesar_encrypt(uint8_t *plaintext, unsigned short N);
@@ -45,14 +46,14 @@ uint8_t *caesar_encrypt(uint8_t *plaintext, unsigned short N);
 
 Decrypts the specified ciphertext using the specified number N.
 
-Returns NULL if plaintext is NULL  */
+Returns NULL if ciphertext is NULL  */
 uint8_t *caesar_decrypt(uint8_t *ciphertext, unsigned short N);
 
 
 /* Spartan's cipher
 
-Encrypts the specified plaintext using the specified circ (circumference of the scytale) and len (length of the scytale).
-Allowed characters for the plaintext are (0-9A-Za-z).
+Encrypts the specified plaintext using the specified circ (circumference of the scytale)
+and len (length of the scytale).
 
 Returns NULL if:
 1) plaintext is NULL
@@ -62,7 +63,8 @@ uint8_t *spartan_encrypt(uint8_t *plaintext, unsigned short circ, unsigned short
 
 /* Spartan's cipher
 
-Decrypts the specified ciphertext using the specified circ (circumference of the scytale) and len (length of the scytale).
+Decrypts the specified ciphertext using the specified circ (circumference of the scytale)
+and len (length of the scytale).
 
 Returns NULL if:
 1) ciphertext is NULL
@@ -72,7 +74,9 @@ uint8_t *spartan_decrypt(uint8_t *ciphertext, unsigned short circ, unsigned shor
 
 /* Vigenere's cipher
 
-Encrypts the specified plaintext using the specified key. Allowed characters for the plaintext are (A-Z).
+Encrypts the specified plaintext using the specified key. Permitted characters for the
+plaintext are (0-9A-Za-z). This is a requirement (not enforced) for the function to work
+properly.
 
 Returns NULL if:
 1) plaintext is NULL
@@ -86,9 +90,10 @@ uint8_t *vigenere_encrypt(uint8_t *plaintext, uint8_t *key);
 Decrypts the specified ciphertext using the specified key.
 
 Returns NULL if:
-1) plaintext is NULL
+1) ciphertext is NULL
 2) key is NULL
-3) length of plaintext < length of key */
+3) length of ciphertext < length of key */
 uint8_t *vigenere_decrypt(uint8_t *ciphertext, uint8_t *key);
+
 
 #endif
