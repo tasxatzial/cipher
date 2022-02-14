@@ -103,16 +103,14 @@ uint8_t *expand_key(uint8_t *key, unsigned int length, unsigned int new_length) 
 /* Generates a random key of the specified length */
 uint8_t *genkey(unsigned int length) {
     uint8_t *key;
-    int fd, valid_key;
-    unsigned int key_length;
-    key = malloc((1 + length) * sizeof(uint8_t)); /* valgrind -> uninitialized */
+    int fd;
+    unsigned int key_length; 
+    key = malloc((1 + length) * sizeof(uint8_t));
     fd = open("/dev/urandom", O_RDONLY);
-    valid_key = 0;
-    while(!valid_key) {
-        read(fd, key, length);
-        key_length = getlength(key);
+    while(1) {
+        key_length = read(fd, key, length);
         if (key_length == length) {
-            valid_key = 1;
+            break;
         }
     }
     close(fd);

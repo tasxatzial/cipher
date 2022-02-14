@@ -14,8 +14,13 @@ static void test_otp() {
 
     printf("OTP text: %s\n", plaintext);
     plaintext_length = getlength(plaintext);
-    key = genkey(plaintext_length);
 
+    key = genkey(plaintext_length);
+    if (key == NULL) {
+        printf("Unable to encrypt\n");
+        return;
+    }
+    
     encrypted = otp_encrypt(plaintext, key);
     printf("OTP encrypted: ");
     printmsg_hex(encrypted, plaintext_length);

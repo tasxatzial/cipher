@@ -32,10 +32,11 @@ uint8_t *otp_encrypt(uint8_t *plaintext, uint8_t *key) {
     if (key_length != length) {
         return NULL;
     }
-    encrypted = malloc(length * sizeof(uint8_t));
+    encrypted = malloc((1 + length) * sizeof(uint8_t));
     for (i = 0; i < length; i++) {
         encrypted[i] = plaintext[i]^key[i];
     }
+    encrypted[i] = '\0';
     return encrypted;
 }
 
