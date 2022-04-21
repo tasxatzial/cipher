@@ -7,10 +7,6 @@ A library of 4 simple cipher algorithms:
 * Vigenere's cipher
 * One-time pad (OTP) cipher
 
-## Profiling
-
-The program has been tested for memory leaks with [valgrind](https://valgrind.org/) and [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer).
-
 ## Compile
 
 Build the library:
@@ -19,18 +15,22 @@ Build the library:
 make crypto.o
 ```
 
-## Tests
+## Demo
 
 Using the library is demonstrated in [main.c](src/main.c)
 
 Build:
 
 ```bash
-make crypto
+make crypto_demo
 ```
 
 Run:
 
 ```bash
-./crypto
+./crypto_demo
 ```
+
+## Profiling
+
+'crypto_demo' has been tested for memory leaks with [valgrind](https://valgrind.org/) and [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer).
